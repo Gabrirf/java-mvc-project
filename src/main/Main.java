@@ -1,9 +1,11 @@
 package main;
 
+import vista.Login;
+
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Hola Mundo !");
+		new Login();
 	}
 
 }
