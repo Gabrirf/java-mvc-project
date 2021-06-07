@@ -77,8 +77,11 @@ public class FormularioAlumno extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Llamar al controlador pasandole los datos del alumno
-				String nombre = "Juanito";
-				Date fechaNacimiento = new Date(0);
+				String nombre = textoNombre.getText();
+				int day = Integer.parseInt(textoDia.getText());
+				int month = comboMes.getSelectedIndex();
+				int year = Integer.parseInt(textoAnio.getText()) - 1900;
+				Date fechaNacimiento = new Date(year, month, day);
 				new Central().crearAlumno(nombre, fechaNacimiento);
 			}
 		});
