@@ -18,9 +18,9 @@ import java.awt.event.ActionEvent;
 public class FormularioAlumno extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_3;
+	private JTextField textoNombre;
+	private JTextField textoDia;
+	private JTextField textoAnio;
 
 	public FormularioAlumno() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,25 +34,25 @@ public class FormularioAlumno extends JFrame {
 		btnNewButton.setBounds(120, 188, 185, 23);
 		contentPane.add(btnNewButton);
 		
-		textField = new JTextField();
-		textField.setBounds(190, 31, 137, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textoNombre = new JTextField();
+		textoNombre.setBounds(190, 31, 137, 20);
+		contentPane.add(textoNombre);
+		textoNombre.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(190, 71, 137, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textoDia = new JTextField();
+		textoDia.setBounds(190, 71, 137, 20);
+		contentPane.add(textoDia);
+		textoDia.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(190, 133, 137, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		textoAnio = new JTextField();
+		textoAnio.setBounds(190, 133, 137, 20);
+		contentPane.add(textoAnio);
+		textoAnio.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}));
-		comboBox.setBounds(190, 100, 137, 22);
-		contentPane.add(comboBox);
+		JComboBox comboMes = new JComboBox();
+		comboMes.setModel(new DefaultComboBoxModel(new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}));
+		comboMes.setBounds(190, 100, 137, 22);
+		contentPane.add(comboMes);
 		
 		JLabel lblNewLabel = new JLabel("Nombre");
 		lblNewLabel.setBounds(99, 34, 46, 14);
