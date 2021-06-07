@@ -3,8 +3,13 @@ package vista;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Central;
+
 import javax.swing.JTable;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TablaAlumnos extends JFrame {
 
@@ -40,5 +45,14 @@ public class TablaAlumnos extends JFrame {
 		contentPane.add(botonRefrescar);
 		
 		setVisible(true);
+		
+		/* ACCIONES */
+		
+		botonCrear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Llamar al controlador para abrir formulario de alumno
+				new Central().abrirFormularioAlumno();
+			}
+		});
 	}
 }
