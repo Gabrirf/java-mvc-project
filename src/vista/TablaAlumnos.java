@@ -3,12 +3,16 @@ package vista;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
+import beans.Alumno;
 import controlador.Central;
 
 import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
 public class TablaAlumnos extends JFrame {
@@ -24,9 +28,14 @@ public class TablaAlumnos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		table = new JTable();
-		table.setBounds(10, 11, 573, 339);
+		DefaultTableModel dtm = new DefaultTableModel();
+		table = new JTable(dtm);
+		table.setBounds(10, 11, 573, 339);		
 		contentPane.add(table);
+		
+		dtm.addColumn("ID");
+		dtm.addColumn("Nombre");
+		dtm.addColumn("FechaNacimiento");
 		
 		JButton botonCrear = new JButton("Crear");
 		botonCrear.setBounds(593, 11, 112, 56);
@@ -52,6 +61,22 @@ public class TablaAlumnos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// Llamar al controlador para abrir formulario de alumno
 				new Central().abrirFormularioAlumno();
+			}
+		});
+		
+		botonRefrescar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// TODO: Llamar al controlador para recoger los datos
+				ArrayList<Alumno> alumnos = new Central().recogerTodosAlumnos();
+				System.out.println(alumnos);
+				// Montar los datos recogidos en la tabla
+				for(Alumno alumno : alumnos){
+					Object[] fila = new Object[3];
+					fila[0] = alumno.getId();
+					fila[1] = alumno.getNombre();
+					fila[2] = alumno.getFechaNacimiento().toLocaleString();
+					dtm.addRow(fila);
+				}
 			}
 		});
 	}
