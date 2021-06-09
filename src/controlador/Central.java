@@ -23,10 +23,7 @@ public class Central {
 	
 	public ArrayList<Alumno> recogerTodosAlumnos(){
 		// TODO: Llamar al modelo para recoger los alumnos
-		ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
-		alumnos.add(new Alumno(1,"Alfonso", new Date(0)));
-		alumnos.add(new Alumno(2,"Rodolfo", new Date(10)));
-		alumnos.add(new Alumno(3,"Antoñito", new Date(20)));
+		ArrayList<Alumno> alumnos = new Alumnos().recogerAlumnos();
 		return alumnos;
 	}
 
