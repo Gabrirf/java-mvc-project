@@ -12,7 +12,7 @@ public class Alumno {
 	public Alumno(int id, String nombre, Date fechaNacimiento) {
 		this.id = id;
 		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
+		this.fechaNacimiento = fechaNacimiento == null ? new Date(0) : fechaNacimiento;
 	}
 	
 	public String getNombre() {
