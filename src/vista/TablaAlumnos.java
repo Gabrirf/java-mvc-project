@@ -68,7 +68,8 @@ public class TablaAlumnos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO: Llamar al controlador para recoger los datos
 				ArrayList<Alumno> alumnos = new Central().recogerTodosAlumnos();
-				System.out.println(alumnos);
+				dtm.getDataVector().removeAllElements();
+				dtm.fireTableDataChanged();
 				// Montar los datos recogidos en la tabla
 				for(Alumno alumno : alumnos){
 					Object[] fila = new Object[3];
