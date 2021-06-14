@@ -26,5 +26,9 @@ public class Central {
 		ArrayList<Alumno> alumnos = new Alumnos().recogerAlumnos();
 		return alumnos;
 	}
-
+	
+	public void borrarAlumno(int id) {
+		new Alumnos().borrarAlumno(id);
+	}
+	
 }

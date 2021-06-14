@@ -34,4 +34,8 @@ public class Alumnos {
 		}
 		return alumnos;
 	}
+	
+	public void borrarAlumno(int idAlumno) {
+		Conexion.ejecutarUpdate("DELETE FROM alumnos WHERE id="+idAlumno+";");
+	}
 }
