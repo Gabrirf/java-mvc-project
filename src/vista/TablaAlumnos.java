@@ -83,9 +83,9 @@ public class TablaAlumnos extends JFrame {
 		
 		botonBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO: Recoger el ID de la fila seleccionada
-				// TODO: Llamar al controlador pasandole el ID alumno
-				new Central().borrarAlumno(3);
+				int posicionTabla = table.getSelectedRow();
+				int idAlumno = (int) dtm.getValueAt(posicionTabla, 0);
+				new Central().borrarAlumno(idAlumno);
 			}
 		});
 	}
